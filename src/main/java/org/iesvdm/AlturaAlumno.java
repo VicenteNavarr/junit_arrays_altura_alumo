@@ -143,7 +143,7 @@ public class AlturaAlumno { // Recorrer dos arrays con la misma longitud
      * @param array
      * @return nuevo
      */
-    static double[] añadeAltura(double[] array)
+    static double[] aniadeAltura(double[] array)
     {
         double[] nuevo = new double[array.length+1];
         double alturaPorDefecto = 1.5;

@@ -34,11 +34,24 @@ public class AlturaAlumnoTest {
         assertArrayEquals(expectedArray, arrayActual);
 
 
-
-
-
-
     }
+
+
+    @Test
+    void aniadeAlturaTest1(){
+
+        final double [] array = new double [0];
+        int longitudInicial = array.length;
+        double altura=1.90;
+        double [] arrayActual = AlturaAlumno.aniadeNombre(array, altura);
+
+        double[] expectedArray = Arrays.copyOf(array, array.length+1);
+        expectedArray[expectedArray.length-1]=altura;
+
+
+        assertEquals(longitudInicial+1, arrayActual.length);
+        assertEquals(altura, arrayActual[arrayActual.length-1]);
+        assertArrayEquals(expectedArray, arrayActual);
 
 
 
