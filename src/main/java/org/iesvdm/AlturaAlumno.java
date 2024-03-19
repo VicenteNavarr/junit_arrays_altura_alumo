@@ -31,7 +31,7 @@ public class AlturaAlumno { // Recorrer dos arrays con la misma longitud
                     String nuevoNombre = sc.nextLine();
 
                     alumnos = aniadeNombre(alumnos, nuevoNombre);
-                    alturas = añadeAltura(alturas);
+                    alturas = aniadeAltura(alturas);
                     break;
 
                 case 2: // Pide un nombre, lo busca y pide la altura para modificarla
