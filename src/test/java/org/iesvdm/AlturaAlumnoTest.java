@@ -37,27 +37,6 @@ public class AlturaAlumnoTest {
 
 
     @Test
-    void aniadeAlturaTest1() {
-
-
-        final double[] array = new double[0];
-        int longitudInicial = array.length;
-        double altura = 1.90;
-        double[] arrayActual = AlturaAlumno.aniadeNombre(array, altura);
-
-        double[] expectedArray = Arrays.copyOf(array, array.length + 1);
-        expectedArray[expectedArray.length - 1] = altura;
-
-
-        assertEquals(longitudInicial + 1, arrayActual.length);
-        assertEquals(altura, arrayActual[arrayActual.length - 1]);
-        assertArrayEquals(expectedArray, arrayActual);
-
-
-    }
-
-
-    @Test
     void modificaAlturaTest1() {
 
         //when(cuando)
@@ -92,7 +71,7 @@ public class AlturaAlumnoTest {
     @Test
     void modificaAlturaPosicionFueradeRangoTest() {
 
-        //when(cuando)
+        //when
 
         double[] array = {1.6, 1.8, 1.7};
         double[] arrayAux = Arrays.copyOf(array, array.length);
@@ -104,7 +83,7 @@ public class AlturaAlumnoTest {
         AlturaAlumno.modificaAltura(array, posicion, nuevaAltura);
 
 
-        //then(entonces)
+        //then
 
         //altura nuieva esta en la posición
         //assertTrue(nuevaAltura == array[posicion]);
@@ -113,8 +92,43 @@ public class AlturaAlumnoTest {
 
         }
 
+    @Test
+    void aniadeAlturaTest1() {
+
+        //when
+        final double[] array = new double[0];
+        double alturaPorDefecto=1.5;
+        int longitudInicial = array.length;
+
+        //do
+        double [] arrayActual = AlturaAlumno.aniadeAltura(array);
+        double [] arrayEsperado = Arrays.copyOf(array,array.length+1);
+        arrayEsperado[arrayEsperado.length-1]=alturaPorDefecto;
+
+        //then
+        assertEquals(longitudInicial + 1, arrayActual.length);
+        assertArrayEquals(arrayEsperado, arrayActual);
+        assertEquals(alturaPorDefecto, arrayActual[arrayActual.length - 1]);
+
+    }
+
+    @Test
+    void buscaNombreTest1() {
+
+        //when
+        int posicionEncontrada = -1;
+        int index = 0;
+
+        //do
 
 
 
     }
-}
+
+
+
+
+
+    }
+
+
